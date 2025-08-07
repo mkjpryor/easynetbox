@@ -11,7 +11,7 @@ class Resource(BaseResource):
     def _prepare_path(self, id=None, params=None):  # noqa: A002
         # NetBox API URLs should always end in a /
         # IDs will likely be integers
-        id = str(id) if id is not None else None
+        id = str(id) if id is not None else None  # noqa: A001
         path, params = super()._prepare_path(id, params)
         return path.rstrip("/") + "/", params
 
